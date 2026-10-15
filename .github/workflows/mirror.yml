@@ -1,0 +1,33 @@
+name: Mirror to GitLab
+
+on:
+  push:
+  delete:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mirror
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    # Forks have no GITLAB_TOKEN.
+    if: ${{ !github.event.repository.fork }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Push to GitLab
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          git push --force --prune \
+            "https://oauth2:${GITLAB_TOKEN}@gitlab.com/kurodaze/${{ github.event.repository.name }}.git" \
+            'refs/remotes/origin/*:refs/heads/*' \
+            'refs/tags/*:refs/tags/*'
