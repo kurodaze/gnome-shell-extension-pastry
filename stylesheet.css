@@ -1,0 +1,101 @@
+/* Menu */
+
+/* Grows with the entries, up to the entry text length setting */
+.pastry-menu-box {
+  min-width: 420px;
+}
+
+.pastry-search-box {
+  padding: 6px 12px 8px;
+}
+
+.pastry-search-entry {
+  min-height: 22px;
+  border-radius: 999px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pastry-search-icon {
+  icon-size: 16px;
+  padding-right: 4px;
+}
+
+.pastry-search-invalid {
+  color: #ed333b;
+}
+
+.pastry-list {
+  -st-vfade-offset: 32px;
+}
+
+.pastry-empty-label {
+  padding: 18px 12px;
+  font-style: italic;
+}
+
+/* Entries */
+
+.pastry-entry {
+  spacing: 6px;
+}
+
+.pastry-entry-content {
+  spacing: 10px;
+}
+
+.pastry-thumbnail {
+  border: 1px solid rgba(127, 127, 127, 0.5);
+}
+
+.pastry-tag {
+  font-size: smaller;
+  padding: 1px 8px;
+  border-radius: 6px;
+  background-color: rgba(127, 127, 127, 0.25);
+}
+
+.pastry-entry-buttons {
+  spacing: 2px;
+}
+
+/* 22px icon + 2 x 6px padding: THUMBNAIL_HEIGHT in entryItem.ts fits in it */
+.pastry-action {
+  padding: 6px;
+  border-radius: 99px;
+}
+
+.pastry-action:hover {
+  background-color: rgba(127, 127, 127, 0.25);
+}
+
+.pastry-action:active {
+  background-color: rgba(127, 127, 127, 0.4);
+}
+
+.pastry-action-icon {
+  icon-size: 22px;
+}
+
+/* Dialogs */
+
+.pastry-edit-scroll {
+  width: 480px;
+  max-height: 340px;
+}
+
+.pastry-edit-entry {
+  min-height: 120px;
+}
+
+.pastry-tag-entry {
+  margin-top: 12px;
+}
+
+.pastry-preview {
+  padding: 6px;
+}
+
+.pastry-preview-dialog .modal-dialog-button {
+  min-width: 120px;
+}

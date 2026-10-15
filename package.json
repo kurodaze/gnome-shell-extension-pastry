@@ -1,0 +1,13 @@
+{
+  "name": "gnome-shell-extension-pastry",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Clipboard manager for GNOME Shell",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@girs/gjs": "^4.9.0",
+    "@girs/gnome-shell": "^50.0.4",
+    "typescript": "^7.0.2"
+  }
+}

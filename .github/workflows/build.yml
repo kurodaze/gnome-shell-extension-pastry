@@ -1,0 +1,23 @@
+name: Build and Check
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # The headless GNOME Shell tests need GNOME 50+, the runner only has gjs
+      - run: sudo apt-get update && sudo apt-get install -y gjs
+      # One make run builds once, a type error fails the build
+      - run: make test-store pack

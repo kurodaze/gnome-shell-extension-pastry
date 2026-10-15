@@ -1,0 +1,13 @@
+{
+  "uuid": "pastry@kurodaze.net",
+  "name": "Pastry",
+  "description": "Clipboard manager with image support, pinned entries, tags, search, editing, private mode and app exclusions.",
+  "shell-version": [
+    "50",
+    "51"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.pastry",
+  "gettext-domain": "pastry",
+  "url": "https://github.com/kurodaze/gnome-shell-extension-pastry",
+  "version-name": "1.0"
+}

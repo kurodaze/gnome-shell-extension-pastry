@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="pastry">
+  <schema id="org.gnome.shell.extensions.pastry" path="/org/gnome/shell/extensions/pastry/">
+
+    <!-- History -->
+    <key name="history-size" type="i">
+      <default>50</default>
+      <range min="1" max="1000"/>
+      <summary>History size</summary>
+      <description>Maximum number of unpinned entries to keep.</description>
+    </key>
+    <key name="move-item-first" type="b">
+      <default>true</default>
+      <summary>Move selected entry to the top</summary>
+    </key>
+    <key name="strip-text" type="b">
+      <default>false</default>
+      <summary>Strip leading and trailing whitespace from copied text</summary>
+    </key>
+    <key name="track-images" type="b">
+      <default>true</default>
+      <summary>Keep copied images in the history</summary>
+    </key>
+    <key name="max-image-size" type="i">
+      <default>10</default>
+      <range min="1" max="100"/>
+      <summary>Largest image to keep, in megabytes</summary>
+    </key>
+    <key name="paste-on-select" type="b">
+      <default>false</default>
+      <summary>Paste the entry into the focused window when selecting it</summary>
+    </key>
+    <key name="confirm-clear" type="b">
+      <default>true</default>
+      <summary>Ask for confirmation before clearing the history</summary>
+    </key>
+
+    <!-- Appearance -->
+    <key name="display-mode" type="s">
+      <choices>
+        <choice value="icon"/>
+        <choice value="text"/>
+        <choice value="both"/>
+      </choices>
+      <default>'icon'</default>
+      <summary>What to show in the top bar</summary>
+    </key>
+    <key name="topbar-preview-length" type="i">
+      <default>20</default>
+      <range min="5" max="100"/>
+      <summary>Number of characters shown in the top bar</summary>
+    </key>
+    <key name="preview-length" type="i">
+      <default>50</default>
+      <range min="10" max="500"/>
+      <summary>Number of characters shown for each entry in the menu</summary>
+    </key>
+    <key name="notify-on-copy" type="b">
+      <default>false</default>
+      <summary>Show a notification when something is copied</summary>
+    </key>
+    <key name="notify-on-cycle" type="b">
+      <default>true</default>
+      <summary>Show a notification when cycling through entries with shortcuts</summary>
+    </key>
+
+    <!-- Privacy -->
+    <key name="private-mode" type="b">
+      <default>false</default>
+      <summary>Private mode</summary>
+      <description>When enabled, nothing new is added to the history.</description>
+    </key>
+    <key name="excluded-apps" type="as">
+      <default>[]</default>
+      <summary>Applications to ignore</summary>
+      <description>Desktop file IDs of applications whose copies are never stored.</description>
+    </key>
+
+    <!-- Auto-clear -->
+    <key name="clear-on-boot" type="b">
+      <default>false</default>
+      <summary>Clear the history at boot</summary>
+    </key>
+    <key name="clear-on-interval" type="b">
+      <default>false</default>
+      <summary>Clear the history at a regular interval</summary>
+    </key>
+    <key name="clear-interval" type="i">
+      <default>60</default>
+      <range min="1" max="10080"/>
+      <summary>Interval between automatic clears, in minutes</summary>
+    </key>
+    <key name="next-clear-time" type="x">
+      <default>0</default>
+      <summary>Unix time of the next scheduled clear (internal)</summary>
+    </key>
+    <key name="last-boot-id" type="s">
+      <default>''</default>
+      <summary>Boot ID seen on the last start (internal)</summary>
+    </key>
+
+    <!-- Shortcuts -->
+    <key name="toggle-menu" type="as">
+      <default>[]</default>
+      <summary>Open or close the menu</summary>
+    </key>
+    <key name="next-entry" type="as">
+      <default>[]</default>
+      <summary>Select the next (older) entry</summary>
+    </key>
+    <key name="prev-entry" type="as">
+      <default>[]</default>
+      <summary>Select the previous (newer) entry</summary>
+    </key>
+    <key name="clear-history" type="as">
+      <default>[]</default>
+      <summary>Clear the history</summary>
+    </key>
+    <key name="toggle-private-mode" type="as">
+      <default>[]</default>
+      <summary>Toggle private mode</summary>
+    </key>
+  </schema>
+</schemalist>
